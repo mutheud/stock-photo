@@ -1,0 +1,9 @@
+virtual/
+start.sh
+instance/
+.vscode/
+__pycache__/
+.env
+.idea
+*pyc
+.DS Store
