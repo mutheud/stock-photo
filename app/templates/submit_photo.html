@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+    <div class="container">
+        <div class="col-md-12">
+            <h3>Submit your photo</h3>
+            <p>Help us tackle diversity and representation by submitting your photos of black and brown people to the People of Color community. 
+                We’ll let you know when your photo is featured.</p>
+
+            <!-- {{ wtf.quick_form(form) }} -->
+
+            <form class="" action="{{url_for('',)}}" method="post" enctype="multipart/form-data">
+                <input type="file" name="photo" class="form-control-file my-2" required>
+                <input class="btn btn-outline-success my-2" type="submit">
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

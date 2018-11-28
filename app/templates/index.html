@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{%block styles%}
+    {{ super() }}
+
+{% endblock %}
+
+{% content block %}
+
+    <div class="container">
+        <h3>Page</h3>
+        <a href="{{url_for('main.submit_photo')}}" class="btn btn-outline-light mx-2 float-right">Create pitch</a>
+    </div>
+    
+{% endblock %}
+
+
