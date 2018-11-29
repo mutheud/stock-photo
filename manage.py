@@ -1,6 +1,6 @@
 from app import create_app, db
 from flask_script import Manager, Server
-from ..models import Photo
+from app.models import Photo
 from flask_migrate import Migrate, MigrateCommand
 
 

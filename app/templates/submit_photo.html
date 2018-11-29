@@ -7,12 +7,25 @@
             <p>Help us tackle diversity and representation by submitting your photos of black and brown people to the People of Color community. 
                 We’ll let you know when your photo is featured.</p>
 
-            <!-- {{ wtf.quick_form(form) }} -->
-
-            <form class="" action="{{url_for('',)}}" method="post" enctype="multipart/form-data">
-                <input type="file" name="photo" class="form-control-file my-2" required>
-                <input class="btn btn-outline-success my-2" type="submit">
-            </form>
+                
+                <form class="form-group" method="post" enctype="multipart/form-data">
+                    {{submit_form.hidden_tag()}}
+                    <div class="upload-field">
+                        <p>Upload your photo</p>
+                        <div class="border border-secondary rounded my-2 py-1 pl-2">
+                            <input type="file" name="photo" class="form-control-file my-2" required>
+                        </div>
+                    </div>
+                    <div class="describe-photo ">
+                        {{submit_form.description.label}}
+                        {{submit_form.description(class = "form-control",style="margin-bottom: 10px;")}}
+                    </div>
+                    <div class="submit_category">
+                        <p>Describe the photo.<small class="text-muted">This'll help people find it later.</small> *</p>
+                        {{submit_form.category}}
+                    </div>
+                    {{submit_form.submit(class = "btn btn-outline-info")}}
+                </form>
 
         </div>
     </div>
