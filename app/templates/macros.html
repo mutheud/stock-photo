@@ -1,8 +1,9 @@
-{% macro displayMax(photos)%}
+{% macro displayPhotos(photos)%}
     {%for photo in photos%}
 
         <div class="">
             <p>{{photo.description}}</p>
+            <p>{{photo.posted}}</p>
         </div>
 
 

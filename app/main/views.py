@@ -29,7 +29,7 @@ def new_photo():
         category = submit_form.category.data
 
         # Updated Photo instance
-        new_photo = Photo(description=description, category=category)
+        new_photo = Photo(description = description, category=category)
 
         # Save Photo Method
         new_photo.save_photo()
@@ -37,6 +37,15 @@ def new_photo():
     title = 'New Photo'
     return render_template('submit_photo.html', title=title, submit_form=submit_form)
 
+
+@main.route('/upload/photo', methods = ['POST'])
+def upload_photo():
+    if 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        path = f'photos/{filename}'
+        photo.photo_path = path
+        db.session.commit()
+    return redirect(url_for('main.new_photo'))
 
 
 @main.route('/photos/active')
