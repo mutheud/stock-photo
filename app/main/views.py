@@ -3,7 +3,7 @@ from ..models import Photo
 from .forms import SubmitPhoto
 from . import main
 import datetime
-
+from .. import photos
 
 @main.route('/')
 def index():
@@ -27,25 +27,19 @@ def new_photo():
 
         description = submit_form.description.data
         category = submit_form.category.data
+        if 'photo' in request.files:
+            filename = photos.save(request.files['photo'])
+            path = f'photos/{filename}'
+            photo_path=path
 
         # Updated Photo instance
-        new_photo = Photo(description = description, category=category)
+        new_photo = Photo(description = description, category=category, photo_path=photo_path )
 
         # Save Photo Method
         new_photo.save_photo()
         return redirect(url_for('.index'))
     title = 'New Photo'
     return render_template('submit_photo.html', title=title, submit_form=submit_form)
-
-
-@main.route('/photo/upload', methods = ['POST'])
-def upload_photo():
-    if 'photo' in request.files:
-        filename = photos.save(request.files['photo'])
-        path = f'photos/{filename}'
-        photo.photo_path = path
-        db.session.commit()
-    return redirect(url_for('main.new_photo'))
 
 
 @main.route('/photos/active')

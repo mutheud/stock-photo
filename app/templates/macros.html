@@ -2,6 +2,7 @@
     {%for photo in photos%}
 
         <div class="">
+            <img class="img-fluid mt-3 rounded" style="width:230px; height:200px;" src="{{url_for('static',filename=photo.photo_path)}}" alt="" class="img-thumbnail">
             <p>{{photo.photo_path}}</p>
             <p>{{photo.description}}</p>
             <p>{{photo.posted}}</p>
