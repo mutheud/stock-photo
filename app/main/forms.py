@@ -8,3 +8,4 @@ class SubmitPhoto(FlaskForm):
     category = SelectField('Type', choices=[('place', 'Place'), ('people', 'People'), ('work', 'Work'), ('food', 'Food'),
      ('active', 'Active')] )
     submit = SubmitField('Submit')
+

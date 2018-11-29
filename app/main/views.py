@@ -36,3 +36,30 @@ def new_photo():
         return redirect(url_for('.index'))
     title = 'New Photo'
     return render_template('submit_photo.html', title=title, submit_form=submit_form)
+
+
+
+@main.route('/photos/active')
+def active():
+    photos = Photo.get_photos('active')
+    return render_template("active.html", title= 'Active', photos=photos)
+
+@main.route('/photos/food')
+def food():
+    photos = Photo.get_photos('food')
+    return render_template("food.html", title= 'Food', photos=photos)
+
+@main.route('/photos/people')
+def people():
+    photos = Photo.get_photos('people')
+    return render_template("people.html", title= 'People', photos=photos)
+
+@main.route('/photos/place')
+def place():
+    photos = Photo.get_photos('place')
+    return render_template("place.html", title= 'Place', photos=photos)
+
+@main.route('/photo/work')
+def work():
+    photos = Photo.get_photos('work')
+    return render_template("work.html", title= 'Work', photos=photos)

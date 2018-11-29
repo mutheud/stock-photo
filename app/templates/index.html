@@ -8,7 +8,16 @@
 {% block content %}
 
     <div class="container">
-        <h3>Page</h3>
+        <div class="muthed"></div>
+        <div id="mark"></div>
+        <h3>Stock Photo</h3>
+        <div class="display">
+            <a class="btn btn-outline-primary" href="{{url_for('main.people')}}" role="button">People</a>
+            <a class="btn btn-outline-secondary" href="{{url_for('main.place')}}" role="button">Place</a>
+            <a class="btn btn-outline-success" href="{{url_for('main.work')}}" role="button">Work</a>
+            <a class="btn btn-outline-dark" href="{{url_for('main.food')}}" role="button">Food</a>
+            <a class="btn btn-outline-info" href="{{url_for('main.active')}}" role="button">Active</a>
+        </div>
         <a href="{{url_for('main.new_photo')}}" class="btn btn-outline-info mx-2 float-right">Submit a photo</a>
     </div>
     
