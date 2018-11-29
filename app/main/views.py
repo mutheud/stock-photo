@@ -38,7 +38,7 @@ def new_photo():
     return render_template('submit_photo.html', title=title, submit_form=submit_form)
 
 
-@main.route('/upload/photo', methods = ['POST'])
+@main.route('/photo/upload', methods = ['POST'])
 def upload_photo():
     if 'photo' in request.files:
         filename = photos.save(request.files['photo'])
