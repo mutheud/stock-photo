@@ -1,59 +1,71 @@
 {% extends 'base.html' %}
 
 {%block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock %}
-
-{% block javascript %}
-    <script src="{{ url_for('static',filename='js/index.js')}}"></script>
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 
 {% block content %}
 
-    <div class="container-fluid">
-        <div class="muthed"></div>
-        <div id="mark"></div>
-        <h3>Stock Photo</h3>
-        <div class="display">
+<div class="container-fluid">
+    <aside class="border border-dark">
+        <h1>Side Nav</h1>
+        <nav>
+            <p class="ml-5">Beautiful, high-res <br> photos of black and <br>brown people. For free</p>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Find</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li id="products">Products</li>
+                <li><a href="#">Carpets & Flooring</a></li>
+                <li><a href="wallpapers.html">Wallpapers & Paints</a></li>
+                <li><a href="#">Fabrics & Trimmings</a></li>
+                <li><a href="#">Upholstery & Furniture</a></li>
+                <li><a href="#">Curtains & Blinds</a></li>
+            </ul>
+        </nav>
+        
+        <div class="vertical-line"></div>
+        
+    </aside>
+    <!-- <div class="muthed">
+        <div class="display mt-3">
             <a class="btn btn-outline-primary" href="{{url_for('main.people')}}" role="button">People</a>
             <a class="btn btn-outline-secondary" href="{{url_for('main.place')}}" role="button">Place</a>
             <a class="btn btn-outline-success" href="{{url_for('main.work')}}" role="button">Work</a>
             <a class="btn btn-outline-dark" href="{{url_for('main.food')}}" role="button">Food</a>
             <a class="btn btn-outline-info" href="{{url_for('main.active')}}" role="button">Active</a>
-        </div>
-        <a href="{{url_for('main.new_photo')}}" class="btn btn-outline-info mx-2 float-right">Submit a photo</a>
-
-
-
-        <div class="container=fluid">
-            <div class="gallery">
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/14/enhanced/webdr01/original-9161-1439317330-3.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
+        </div> -->
         
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/14/enhanced/webdr08/original-1654-1439317465-3.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />		
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/15/enhanced/webdr08/original-13354-1439321173-3.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/15/enhanced/webdr04/original-25740-1439321209-5.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/15/enhanced/webdr08/original-9292-1439319916-3.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/14/enhanced/webdr05/original-6710-1439319334-17.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
+        <div class="dmark">
+            <!-- <p class="font-weight-bold">Beautiful, high-res photos of black and brown people. For free.</p> -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="{{url_for('static', filename='img/img1.jpg')}}" alt="First slide" style="height:auto; width:100%;">
+                            </div>
+                            <div class="carousel-item">
+                            <img class="d-block img-fluid" src="{{url_for('static', filename='img/img2.jpg')}}" alt="Second slide" style="height:auto; width:100%;">
+                            </div>
+                            <div class="carousel-item">
+                            <img class="d-block img-fluid " src="{{url_for('static', filename='img/nappy')}}"  alt="Third slide" style="height:auto; width:100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+            
+            
+      
+      
+      
+      
+       
+      
         
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/15/enhanced/webdr02/original-16901-1439320287-3.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/15/enhanced/webdr04/original-29345-1439321306-8.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-                <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/15/enhanced/webdr15/original-20286-1439320376-10.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/14/enhanced/webdr02/original-6989-1439317507-15.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/14/enhanced/webdr11/original-8867-1439317446-6.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/11/14/enhanced/webdr03/original-22498-1439319085-3.jpg?downsize=715:*&output-format=auto&output-quality=auto" alt="" width="100%" height="auto" class="gallery-img" />
-            </div> 
-        </div>
-        
-        <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
-              </div>
-            </div>
-          </div>
-        </div>
-
 
     </div>
     
