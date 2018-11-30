@@ -9,14 +9,18 @@
 }
 
 
-
-
 .carousel{
   width:60%;
   height:50%;
   margin-left: 25%;
   margin-top: 6.8%;
 }
+
+.category-displays{
+  margin-left: 25%;
+  margin-top: 6.8%; 
+}
+
 
 .dmark{
   display: inline-block;
@@ -30,7 +34,6 @@
 }
 
 
-
 aside{
 	position:fixed;
 	float:left;
@@ -40,7 +43,6 @@ aside{
   margin-left:-1%;
 	background-color:#ffffff;
 }
-
 
 
 nav{

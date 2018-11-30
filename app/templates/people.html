@@ -1,13 +1,33 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 {%block content%}
-    <div class="container">
-        <h3 class="my-3 font-weight-bold">People Photos</h3>
-        <div class="row">
-            <div class="">
-                {{macro.displayPhotos(photos)}}
+    <div class="container-fluid">
+            <aside class="border border-dark" style="padding-top:4%;">
+                    <h1>Side Nav</h1>
+                    <nav>
+                        <p class="ml-5">Beautiful, high-res <br> photos of black and <br>brown people. For free</p>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Find</a></li>
+                            <li><a href="#">Contacts</a></li>
+                            <li id="products">Products</li>
+                            <li><a href="#">Carpets & Flooring</a></li>
+                            <li><a href="wallpapers.html">Wallpapers & Paints</a></li>
+                            <li><a href="#">Fabrics & Trimmings</a></li>
+                            <li><a href="#">Upholstery & Furniture</a></li>
+                            <li><a href="#">Curtains & Blinds</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="vertical-line"></div>
+                    
+            </aside>
+            <div class="category-displays">
+                <div class="row">
+                    <div class="">
+                        {{macro.displayPhotos(photos)}}
+                    </div>
+                </div>
             </div>
-        </div>
     </div>
-    <img src="https://unsplash.com/collections/1369949/black-people" alt="">
 {%endblock%}
